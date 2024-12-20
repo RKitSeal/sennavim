@@ -38,6 +38,9 @@ map("n", "<leader>bp", ":bprevious<CR>", { desc = "Switch to the previous buffer
 map("n", "<leader>bx", ":bdelete<CR>", { desc = "Close the current buffer" })
 map("n", "<leader>bd", ":%bd|e#|bd#<CR>", { desc = "Close all buffers except the current one" })
 
+-- lazygit
+map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit" })
+
 -- lsp
 
 local M = {}
