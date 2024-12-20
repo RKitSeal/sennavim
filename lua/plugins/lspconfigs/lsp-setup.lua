@@ -6,11 +6,17 @@ M.formatters = {}
 
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+local keymaps = require('core.keymaps').lsp
+
 capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+local on_attach = function(_client, bufnr)
+    keymaps(bufnr)
+end
 
 -- Function to register an LSP server
 M.register_server = function(server_name, config)
     config.capabilities = config.capabilities or capabilities
+    config.on_attach = on_attach
     M.servers[server_name] = config
 end
 
@@ -30,7 +36,7 @@ end
 
 -- Function to get the list of registered servers
 M.get_servers = function()
-    return vim.tbl_keys(M.servers)  -- Return the list of server names
+    return vim.tbl_keys(M.servers) -- Return the list of server names
 end
 
 -- get the formatters table
@@ -80,4 +86,3 @@ end
 load_language_configs()
 
 return M
-
