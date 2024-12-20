@@ -1,12 +1,21 @@
 return {
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-  {
-    "baliestri/aura-theme",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    config = function(plugin)
-      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      vim.cmd([[colorscheme aura-dark]])
-    end
-  }
+    config = function()
+        require("tokyonight").setup({
+            style = "night",
+            transparent = true,
+            terminal_colors = true,
+            styles = {
+                floats = "transparent",
+                sidebars = "transparent",
+                comments = { italic = false },
+                keywords = { italic = false },
+                variables = { bold = true },
+            },
+            dim_inactive = true,
+        })
+        vim.cmd.colorscheme("tokyonight")
+    end,
 }
