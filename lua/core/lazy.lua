@@ -18,26 +18,74 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{
-			"folke/tokyonight.nvim",
-			lazy = false,
+			"catppuccin/nvim",
+			name = "catppuccin",
 			priority = 1000,
 			config = function()
-				require("tokyonight").setup({
-					style = "night",
-					transparent = true,
-					terminal_colors = true,
-					styles = {
-						floats = "transparent",
-						sidebars = "transparent",
-						comments = { italic = false },
-						keywords = { italic = false },
-						variables = { bold = true },
+				require("catppuccin").setup({
+					flavour = "mocha",
+					transparent_background = true,
+					integrations = {
+						neotree = true,
+						-- gitsigns = true,
+						-- harpoon = true,
+						blink_cmp = true,
+						fzf = true,
+						mason = true,
+						markdown = true,
+						mini = {
+							enabled = true,
+							indentscope_color = "",
+						},
+						native_lsp = {
+							enabled = true,
+							virtual_text = {
+								errors = { "italic" },
+								hints = { "italic" },
+								warnings = { "italic" },
+								information = { "italic" },
+								ok = { "italic" },
+							},
+							underlines = {
+								errors = { "underline" },
+								hints = { "underline" },
+								warnings = { "underline" },
+								information = { "underline" },
+								ok = { "underline" },
+							},
+							inlay_hints = {
+								background = true,
+							},
+						},
+						lsp_trouble = true,
+						treesitter = true,
+						treesitter_context = true,
 					},
-					dim_inactive = true,
 				})
-				vim.cmd.colorscheme("tokyonight")
+				vim.cmd.colorscheme("catppuccin")
 			end,
 		},
+		-- {
+		-- 	"folke/tokyonight.nvim",
+		-- 	lazy = false,
+		-- 	priority = 1000,
+		-- 	config = function()
+		-- 		require("tokyonight").setup({
+		-- 			style = "night",
+		-- 			transparent = true,
+		-- 			terminal_colors = true,
+		-- 			styles = {
+		-- 				floats = "transparent",
+		-- 				sidebars = "transparent",
+		-- 				comments = { italic = false },
+		-- 				keywords = { italic = false },
+		-- 				variables = { bold = true },
+		-- 			},
+		-- 			dim_inactive = true,
+		-- 		})
+		-- 		vim.cmd.colorscheme("tokyonight")
+		-- 	end,
+		-- },
 
 		{ import = "plugins" },
 	},
