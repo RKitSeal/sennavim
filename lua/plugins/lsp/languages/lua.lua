@@ -1,8 +1,10 @@
+local unpack = unpack or table.unpack -- unpack is depracated. table.unpack is the new standard
+
 return function()
     sennvim.lsp.add_config('lua_ls', {
-        ettings = {
+        settings = {
             Lua = {
-                runtime = { version = "LuaJIT" },
+                runtime = { version = "Lua 5.4" },
                 workspace = {
                     checkThirdParty = false,
                     -- Tells lua_ls where to find all the Lua files that you have loaded
