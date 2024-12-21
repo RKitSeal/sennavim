@@ -69,7 +69,7 @@ local function load_language_configs()
         'plugins.lspconfigs.langs.typescript',
         'plugins.lspconfigs.langs.lua',
         'plugins.lspconfigs.langs.go',
-        -- 'plugins.lspconfigs.python',
+        -- 'plugins.lspconfigs.langs.python',
         -- Add other language modules here
     }
 

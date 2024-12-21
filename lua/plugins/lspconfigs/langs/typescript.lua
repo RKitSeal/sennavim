@@ -1,10 +1,26 @@
 return function(lsp)
+    local inlay_hints = {
+        includeInlayEnumMemberValueHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+
+    }
+
     lsp.register_server('ts_ls', {
-        on_attach = function(client, bufnr)
-            local opts = { noremap = true, silent = true, buffer = bufnr }
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        end,
+        settings = {
+            maxTsServerMemory = 12288,
+            typescript = {
+                inlayHints = inlay_hints,
+            },
+            javascript = {
+                inlayHints = inlay_hints,
+            },
+        },
     })
 
     lsp.register_formatter('typescript', { 'biome' })
@@ -12,4 +28,3 @@ return function(lsp)
     lsp.register_formatter('javascript', { 'biome' })
     lsp.register_formatter('javascriptreact', { 'biome' })
 end
-
