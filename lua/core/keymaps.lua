@@ -3,15 +3,14 @@ local common_opts = { noremap = true, silent = true }
 
 -- Utility function for setting key mappings
 local function map(mode, lhs, rhs, opts)
-    opts = opts or {} -- Default to an empty table if no options are provided
-    for k, v in pairs(common_opts) do
-        if opts[k] == nil then
-            opts[k] = v
-        end
-    end
-    vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {} -- Default to an empty table if no options are provided
+	for k, v in pairs(common_opts) do
+		if opts[k] == nil then
+			opts[k] = v
+		end
+	end
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
-
 
 -- navigation edits
 -- Remap j and k to gj and gk in normal and visual mode
@@ -41,18 +40,21 @@ map("n", "<leader>bd", ":%bd|e#|bd#<CR>", { desc = "Close all buffers except the
 -- lazygit
 map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit" })
 
+-- neotree
+map("n", "<leader>ee", ":Neotree toggle<CR>", { desc = "Togglu Neotree" })
+
 -- lsp
 
 local M = {}
 
 M.lsp = function(bufnr)
-    map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
-    map("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Hover info", buffer = bufnr })
-    map("n", "<leader>ci", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = bufnr })
-    map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Show references", buffer = bufnr })
-    map("n", "<leader>cn", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = bufnr })
-    map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
-    map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format code", buffer = bufnr })
-    map("n", "<leader>ce", vim.diagnostic.open_float, { desc = "Open diagnostic", buffer = bufnr })
+	map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = bufnr })
+	map("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Hover info", buffer = bufnr })
+	map("n", "<leader>ci", vim.lsp.buf.implementation, { desc = "Go to implementation", buffer = bufnr })
+	map("n", "<leader>cr", vim.lsp.buf.references, { desc = "Show references", buffer = bufnr })
+	map("n", "<leader>cn", vim.lsp.buf.rename, { desc = "Rename symbol", buffer = bufnr })
+	map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
+	map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format code", buffer = bufnr })
+	map("n", "<leader>ce", vim.diagnostic.open_float, { desc = "Open diagnostic", buffer = bufnr })
 end
 return M

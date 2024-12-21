@@ -2,7 +2,7 @@
 -- Set some globals
 -- ===========================================
 
-_G.sennvim = require('utils')
+_G.sennvim = require("utils")
 
 -- ===========================================
 -- Shortcuts for Vim API
@@ -10,6 +10,12 @@ _G.sennvim = require('utils')
 local g = vim.g -- Shorten vim.g to g
 local opt = vim.opt -- Shorten vim.opt to opt
 local cmd = vim.cmd -- Shorten vim.cmd to cmd
+
+-- ===========================================
+-- For neotree - hides netrw
+-- ===========================================
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- ===========================================
 -- Leader Key Settings
