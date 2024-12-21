@@ -20,13 +20,14 @@ return {
 
 			local servers = sennvim.lsp.get_server_names()
 			local formatters = sennvim.formatters.get_formatter_names()
+			local linters = sennvim.linters.get_linter_names()
 			local lsp_configs = sennvim.lsp.configs
-			local ensure_installed = sennvim.utilities.combine_tables(servers, formatters)
+			local ensure_installed = sennvim.utilities.combine_tables(servers, formatters, linters)
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = blink_cmp.get_lsp_capabilities(capabilities)
 			local keymaps = require("core.keymaps").lsp
-			local on_attach = function(_client, bufnr)
+			local on_attach = function(_, bufnr)
 				keymaps(bufnr)
 			end
 
@@ -71,7 +72,33 @@ return {
 				lsp_format = "fallback",
 			},
 			formatters = sennvim.formatters.get_formatter_configs(),
-			formatters_by_ft = sennvim.formatters.get_formatters(),
+			formatters_by_ft = sennvim.formatters.formatters,
 		},
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
+			local lint = require("lint")
+
+			lint.linters_by_ft = {
+				sennvim.linters.linters,
+			}
+
+			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = lint_augroup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+
+			vim.keymap.set("n", "<leader>l", function()
+				lint.try_lint()
+			end, { desc = "Trigger linting for current file" })
+		end,
 	},
 }
