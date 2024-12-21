@@ -27,4 +27,18 @@ return function(lsp)
     lsp.register_formatter('typescriptreact', { 'biome' })
     lsp.register_formatter('javascript', { 'biome' })
     lsp.register_formatter('javascriptreact', { 'biome' })
+
+    -- require("conform").setup({
+    --     opts = {
+    --         formatters = {
+    --             biome = {
+    --                 prepend_args = {
+    --                     "check",
+    --                     "--unsafe",
+    --                     "--write",
+    --                 }
+    --             }
+    --         }
+    --     }
+    -- })
 end
