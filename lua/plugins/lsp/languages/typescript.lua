@@ -1,4 +1,5 @@
-return function(lsp)
+return function()
+
     local inlay_hints = {
         includeInlayEnumMemberValueHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
@@ -11,7 +12,7 @@ return function(lsp)
 
     }
 
-    lsp.register_server('ts_ls', {
+    sennvim.lsp.add_config('ts_ls', {
         settings = {
             maxTsServerMemory = 12288,
             typescript = {
@@ -23,22 +24,9 @@ return function(lsp)
         },
     })
 
-    lsp.register_formatter('typescript', { 'biome' })
-    lsp.register_formatter('typescriptreact', { 'biome' })
-    lsp.register_formatter('javascript', { 'biome' })
-    lsp.register_formatter('javascriptreact', { 'biome' })
-
-    -- require("conform").setup({
-    --     opts = {
-    --         formatters = {
-    --             biome = {
-    --                 prepend_args = {
-    --                     "check",
-    --                     "--unsafe",
-    --                     "--write",
-    --                 }
-    --             }
-    --         }
-    --     }
-    -- })
+    sennvim.formatters.add_formatter('typescript', { 'biome' })
+    sennvim.formatters.add_formatter('typescriptreact', { 'biome' })
+    sennvim.formatters.add_formatter('javascript', { 'biome' })
+    sennvim.formatters.add_formatter('javascriptreact', { 'biome' })
+    sennvim.formatters.add_formatter_config('biome',{ prepend_args = {"check", "--unsafe", "--write"}})
 end

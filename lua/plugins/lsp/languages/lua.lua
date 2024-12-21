@@ -1,5 +1,5 @@
-return function(lsp)
-    lsp.register_server('lua_ls', {
+return function()
+    sennvim.lsp.add_config('lua_ls', {
         ettings = {
             Lua = {
                 runtime = { version = "LuaJIT" },
@@ -16,5 +16,6 @@ return function(lsp)
             },
         },
     })
-    lsp.register_formatter('lua', { 'stylua' })
+
+    sennvim.formatters.add_formatter('lua', { 'stylua' })
 end

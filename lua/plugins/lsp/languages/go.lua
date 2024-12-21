@@ -1,7 +1,7 @@
-return function(lsp)
-    lsp.register_server('gopls', {
+return function()
+    sennvim.lsp.add_config('gopls', {
         settings = {
-            gopls = {
+         gopls = {
                 analyses = {
                     unusedparams = true,
                     unreachable = true,
@@ -13,5 +13,5 @@ return function(lsp)
         },
     })
 
-    lsp.register_formatter('go', { 'gopls' })
+    sennvim.formatters.add_formatter('go', { 'gopls' })
 end
