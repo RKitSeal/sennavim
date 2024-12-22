@@ -35,7 +35,7 @@ require("lazy").setup({
 						markdown = true,
 						mini = {
 							enabled = true,
-							indentscope_color = "",
+							indentscope_color = "lavender",
 						},
 						native_lsp = {
 							enabled = true,
@@ -65,39 +65,10 @@ require("lazy").setup({
 				vim.cmd.colorscheme("catppuccin")
 			end,
 		},
-		-- {
-		-- 	"folke/tokyonight.nvim",
-		-- 	lazy = false,
-		-- 	priority = 1000,
-		-- 	config = function()
-		-- 		require("tokyonight").setup({
-		-- 			style = "night",
-		-- 			transparent = true,
-		-- 			terminal_colors = true,
-		-- 			styles = {
-		-- 				floats = "transparent",
-		-- 				sidebars = "transparent",
-		-- 				comments = { italic = false },
-		-- 				keywords = { italic = false },
-		-- 				variables = { bold = true },
-		-- 			},
-		-- 			dim_inactive = true,
-		-- 		})
-		-- 		vim.cmd.colorscheme("tokyonight")
-		-- 	end,
-		-- },
-
 		{ import = "plugins" },
 	},
-	{
-		change_detection = {
-			enabled = true,
-			notify = false,
-		},
+	change_detection = {
+		enabled = true,
+		notify = false,
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	-- install = { colorscheme = { "habamax" } },
-	-- automatically check for plugin updates
-	-- checker = { enabled = true },
 })
