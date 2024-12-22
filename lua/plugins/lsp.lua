@@ -24,8 +24,7 @@ return {
 			local lsp_configs = sennvim.lsp.configs
 			local ensure_installed = sennvim.utilities.combine_tables(servers, formatters, linters)
 
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = blink_cmp.get_lsp_capabilities(capabilities)
+			local capabilities = blink_cmp.get_lsp_capabilities()
 			local keymaps = require("core.keymaps").lsp
 			local on_attach = function(_, bufnr)
 				keymaps(bufnr)
@@ -37,9 +36,7 @@ return {
 				},
 			})
 
-			mason_lspconfig.setup({
-				ensure_installed = servers,
-			})
+			mason_lspconfig.setup({ ensure_installed = servers })
 
 			mason_tool_installer.setup({
 				auto_update = true,
@@ -52,7 +49,15 @@ return {
 			for server, config in pairs(lsp_configs) do
 				config.on_attach = on_attach
 				config.capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
-				lspconfig[server].setup(config)
+				lspconfig[server].setup({
+					autostart = config.autostart,
+					cmd = config.cmd,
+					capabilities = capabilities,
+					filetypes = config.filetypes,
+					on_attach = on_attach,
+					settings = config.settings,
+					root_dir = config.root_dir,
+				})
 			end
 		end,
 	},
