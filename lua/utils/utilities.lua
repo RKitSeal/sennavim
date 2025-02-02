@@ -34,4 +34,32 @@ M.mason_ensure_installed = function(tools)
 	end)
 end
 
+M.live_preview_status = false
+
+M.toggle_live_preview = function()
+	if M.live_preview_status then
+		vim.cmd("LivePreview close")
+		M.live_preview_status = false
+		print("LivePreview stopped")
+	else
+		local filepath = vim.api.nvim_buf_get_name(0)
+
+		if filepath == "" or filepath == nil then
+			print("Error: No file detected for LivePreview.")
+			return
+		end
+
+		local escaped_filepath = vim.fn.fnameescape(filepath)
+
+		vim.api.nvim_feedkeys(":LivePreview start " .. escaped_filepath .. "\n", "n", false)
+
+		vim.defer_fn(function()
+			vim.cmd("redraw!")
+		end, 100)
+
+		M.live_preview_status = true
+		print("LivePreview started for: " .. filepath)
+	end
+end
+
 return M

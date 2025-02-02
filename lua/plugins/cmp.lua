@@ -20,11 +20,10 @@ return {
 			end,
 			providers = {
 				lsp = {
-					min_keyword_length = 2,
-					score_offset = 0,
+					min_keyword_length = 1,
 				},
 				path = {
-					min_keyword_length = 0,
+					min_keyword_length = 1,
 				},
 				snippets = {
 					min_keyword_length = 2,
