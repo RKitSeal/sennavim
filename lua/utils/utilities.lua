@@ -34,10 +34,9 @@ M.mason_ensure_installed = function(tools)
 	end)
 end
 
-M.live_preview_status = false
-
 M.toggle_live_preview = function()
-	if M.live_preview_status then
+	local is_running = require("livepreview").is_running()
+	if is_running then
 		vim.cmd("LivePreview close")
 		M.live_preview_status = false
 		print("LivePreview stopped")
