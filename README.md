@@ -8,6 +8,10 @@ Sennvim uses the following plugins:
 
 - [Lazy.nvim](https://www.github.com/folke/lazy.nvim) - for plugin management.
 - [LSP Config](https://www.github.com/neovim/nvim-lspconfig) - for language server protocol.
+- [Mason](http://www.github.com/williamboman/mason.nvim) - for lsp/formatter/linter management.
+- [Mason LSP Config](http://www.github.com/williamboman/mason-lspconfig.nvim) - for lsp/formatter/linter management.
+- [Conform](http://www.github.com/stevearc/conform.nvim) - For auto formatting.
+- [nvim lint](http://www.github.com/mfussenegger/nvim-lint) - for linting.
 - [Blink CMP](https://www.github.com/Saghen/blink.cmp) - for autocompletion.
 - [Copilot](https://www.github.com/zbirenbaum/copilot.lua) - AI Assistant - will need some custom work to change this.
 - [Treesitter](https://www.github.com/nvim-treesitter/nvim-treesitter) - for syntax highlighting.
@@ -29,6 +33,8 @@ brew install lazygit fzf ripgrep
 ```
 
 Or use your preferred package manager.
+
+If you plan on using Ruff for Python, and you like strict configurations, you can grab my config [here](https://github.com/ionztorm/dotfiles/blob/main/ruff/ruff.toml). Remember to update the path in the Python language file (details on language files below).
 
 ## Language Servers
 
