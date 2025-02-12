@@ -23,6 +23,7 @@ Sennvim uses the following plugins:
 - [Mini.nvim](https://www.github.com/echasnovski/mini.nvim) - for statusline, autotags, icons, colour highlights, indent scope, cursorword, pairs, and file browser
 - [Colorizer](https://www.github.com/NvChad/nvim-colorizer.lua) - for colouring tailwind colours.
 - [TS Autotag](https://www.github.com/windwp/nvim-ts-autotag) - for autotags in html and jsx.
+- [Live Preview](https://www.github.com/brianhuster/live-preview.nvim) - for live preview of markdown and html files.
 
 ## Requirements & Reccomendations:
 
@@ -117,6 +118,41 @@ end
 ```
 
 Note: there is also a global `sennvim.formatters.add_formatter_config` available if you need to add additional args to the format command. You can see this in use in the TypeScript example above.
+
+## Keybindings
+### General
+
+- `shift + up`/`shift + down` - Move selected text up and down.
+
+### Buffers
+
+- `leader bn` Switch to next buffer.
+- `leader bp` Switch to previous buffer.
+- `leader bd` Close all buffers apart from the current buffer.
+- `leader bx` Close the current buffer.
+
+### Quick access to tools
+
+- `leader gg` Open Lazygit
+- `leader ls` Toggle live preview
+- `leader ee` Open file browser
+- `leader ff` Open fuzzy finder
+- `leader xx` Open diagnostics list
+- `leader fg` Open live grep
+- `leader fb` Open currently opened buffers.
+- `leader fh` Search help files.
+- `leader fx` Search in nvim config files for quick adjustments.
+
+### LSP
+
+- `leader cd` Go to code definition.
+- `leader ch` View hover info ("K" also works).
+- `leader ci` Go to implementation.
+- `leader cr` Show references.
+- `leader cn` Rename symbol under cursor.
+- `leader ca` View code actions
+- `leader cf` Format current file
+- `leader ce` Open diagnostics list
 
 
 ## Still todo:
