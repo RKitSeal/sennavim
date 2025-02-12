@@ -6,9 +6,9 @@ return {
 		input = {
 			enabled = true,
 		},
-		-- dim = {
-		-- 	enabled = true,
-		-- },
+		dim = {
+			enabled = true,
+		},
 		-- scroll = {
 		-- 	enabled = true,
 		-- },
