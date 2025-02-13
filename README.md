@@ -41,7 +41,7 @@ Sennvim uses the following plugins:
 - [Copilot](https://www.github.com/zbirenbaum/copilot.lua) - AI Assistant - will need some custom work to change this.
 - [Treesitter](https://www.github.com/nvim-treesitter/nvim-treesitter) - for syntax highlighting.
 - [Gitsigns](https://www.github.com/lewis6991/gitsigns.nvim) - for git integration.
-- [LazyGit](https://www.github.com/kdheepak/lazygit.nvim) - for git integration.
+- [Snacks](https://www.github.com/folke/snacks.nvim) - Various, including LazyGit
 - [TeleScope](https://www.github.com/nvim-telescope/telescope.nvim) - for fuzzy finder.
 - [Trouble](https://www.github.com/folke/trouble.nvim) - for quickfix list.
 - [Todo Comments](https://www.github.com/folke/todo-comments.nvim) - for todo comments colouring and highlights.
