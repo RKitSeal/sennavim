@@ -46,11 +46,11 @@ local Snacks = require("snacks")
 map("n", "<leader>gg", function()
 	Snacks.lazygit()
 end, { desc = "Lazygit" })
+
 -- Picker
 map("n", "<leader>ee", ":lua MiniFiles.open()<CR>", { desc = "Togglu MiniFiles" })
 
 -- Telescope
-
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
