@@ -74,7 +74,7 @@ I've included a custom, modular approach to loading lagnuage servers, formatters
   * `sennvim.linters.add_linter` to add a linter.
 4. These files will be automatically detected, loaded, and installed via Mason on the next load.
 
-For extample, here is the Python language file:
+For example, here is the Python language file:
 
 ```lua
 
