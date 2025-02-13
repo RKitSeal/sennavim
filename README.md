@@ -19,8 +19,13 @@ Then delete these dirs.
 git clone https://github.com/ionztorm/sennvim.git ~/.config/nvim
 ```
 
-Then open nvim and run:
+Then delete the git dir:
+
+```bash
+rm -rf ~/.config/nvim/.git .gitignore
 ```
+
+Run nvim.
 
 ## Plugins Included
 
