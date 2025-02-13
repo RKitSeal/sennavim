@@ -41,10 +41,12 @@ map("n", "<C-j>", "<C-w>j", { desc = "Move to the pane below" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to the pane above" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to the pane on the right" })
 
--- lazygit
-map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit" })
-
--- neotree / mini.files
+-- Snacks
+local Snacks = require("snacks")
+map("n", "<leader>gg", function()
+	Snacks.lazygit()
+end, { desc = "Lazygit" })
+-- Picker
 map("n", "<leader>ee", ":lua MiniFiles.open()<CR>", { desc = "Togglu MiniFiles" })
 
 -- Telescope
