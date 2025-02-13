@@ -2,6 +2,26 @@
 
 Sennvim is a simple and lightweight vim configuration for Python, Go, and TypeScript development.
 
+## Installation
+
+Make a backup of your current nvim configuration:
+
+```text
+~/.config/nvim
+~/.local/share/nvim
+~/.local/state/nvim
+~/.cache/nvim
+```
+
+Then delete these dirs.
+
+```bash
+git clone https://github.com/ionztorm/sennvim.git ~/.config/nvim
+```
+
+Then open nvim and run:
+```
+
 ## Plugins Included
 
 Sennvim uses the following plugins:
