@@ -183,6 +183,6 @@ Note: there is also a global `sennvim.formatters.add_formatter_config` available
 
 - Include dap & dap loaders.
 
-## Contributions
+## Contributing
 
 I welcome the idea that someone might find this useful and want to contribute. If you have any ideas, suggestions, or improvements, please feel free to open an issue or a pull request.
