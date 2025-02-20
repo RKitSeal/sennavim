@@ -35,7 +35,7 @@ return {
 				})
 			end
 
-			-- setupss
+			-- setups
 			icons.setup({})
 			statusline.setup({ use_icons = true, content = { active = content_active } })
 			ai.setup({ n_lines = 500 })

@@ -13,10 +13,10 @@ local cmd = vim.cmd -- Shorten vim.cmd to cmd
 local api = vim.api -- Shorten vim.api to api
 
 -- ===========================================
--- For neotree - hides netrw
+-- hides netrw
 -- ===========================================
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- ===========================================
 -- Leader Key Settings
