@@ -45,17 +45,18 @@ Sennvim uses the following plugins:
 - [TeleScope](https://www.github.com/nvim-telescope/telescope.nvim) - for fuzzy finder.
 - [Trouble](https://www.github.com/folke/trouble.nvim) - for quickfix list.
 - [Todo Comments](https://www.github.com/folke/todo-comments.nvim) - for todo comments colouring and highlights.
-- [Mini.nvim](https://www.github.com/echasnovski/mini.nvim) - for statusline, autotags, icons, colour highlights, indent scope, cursorword, pairs, and file browser
+- [Mini.nvim](https://www.github.com/echasnovski/mini.nvim) - for statusline, autotags, icons, colour highlights, indent scope, cursorword, pairs
 - [Colorizer](https://www.github.com/NvChad/nvim-colorizer.lua) - for colouring tailwind colours.
 - [TS Autotag](https://www.github.com/windwp/nvim-ts-autotag) - for autotags in html and jsx.
 - [Live Preview](https://www.github.com/brianhuster/live-preview.nvim) - for live preview of markdown and html files.
+- [Yazi](https://github.com/mikavilpas/yazi.nvim?tab=readme-ov-file) - Yazi for neovim. Requires Yazi
 
 ## Requirements & Reccomendations:
 
 Install with homebrew:
 
 ```bash
-brew install lazygit fzf ripgrep
+brew install lazygit fzf ripgrep regex yazi
 ```
 
 Or use your preferred package manager.
