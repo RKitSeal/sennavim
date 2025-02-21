@@ -27,6 +27,8 @@ rm -rf ~/.config/nvim/.git .gitignore
 
 Run nvim.
 
+Or you can also check out my [dotfiles](https://www.github.com/ionztorm/dotfiles) for the full dev environment.
+
 ## Plugins Included
 
 Sennvim uses the following plugins:
