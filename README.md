@@ -75,6 +75,25 @@ I've included a custom, modular approach to loading lagnuage servers, formatters
   * `sennvim.linters.add_linter` to add a linter.
 4. These files will be automatically detected, loaded, and installed via Mason on the next load.
 
+The signature for `lsp.add_config` is:
+
+```lua
+-- server_name: string
+-- config: table
+sennvim.lsp.add_config(server_name, config)
+```
+
+Signatures for linters and formatters are:
+
+```lua
+-- language: string
+-- linters / formatter : table
+sennvim.linters.add_linter(language, linters)
+sennvim.formatters.add_formatter(language, formatter)
+```
+
+Linter and Formatter tables can contain multiple linters and formatters.
+
 For example, here is the Python language file:
 
 ```lua
@@ -161,7 +180,7 @@ Note: there is also a global `sennvim.formatters.add_formatter_config` available
 
 - `leader gg` Open Lazygit
 - `leader ls` Toggle live preview
-- `leader ee` Open file browser
+- `leader ee` Open Yazy. Yazi keybindings. See [Yazi Documentation](https://yazi-rs.github.io/docs/configuration/keymap)
 - `leader ff` Open fuzzy finder
 - `leader xx` Open diagnostics list
 - `leader fg` Open live grep
