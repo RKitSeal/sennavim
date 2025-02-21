@@ -22,7 +22,7 @@ git clone https://github.com/ionztorm/sennvim.git ~/.config/nvim
 Then delete the git dir:
 
 ```bash
-rm -rf ~/.config/nvim/.git ~/.config/nvim/.gitignore
+rm -rf ~/.config/nvim/.git .gitignore
 ```
 
 Run nvim.
