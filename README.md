@@ -189,8 +189,8 @@ Note: there is also a global `sennvim.formatters.add_formatter_config` available
 
 ### Quick access to tools
 
-- `leader gg` Open Lazygit
-- `leader ls` Toggle live preview
+- `leader gg` Open Lazygit. Press `?` for help and keybindings.
+- `leader ls` Toggle live preview for markdown and html files.
 - `leader ee` Open Yazy. Yazi keybindings. See [Yazi Documentation](https://yazi-rs.github.io/docs/configuration/keymap)
 - `leader ff` Open fuzzy finder
 - `leader xx` Open diagnostics list
