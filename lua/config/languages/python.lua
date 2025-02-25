@@ -2,12 +2,18 @@ return function()
 	sennvim.lsp.add_config("basedpyright", {
 		settings = {
 			basedpyright = {
-				typeCheckingMode = "basic",
+				analysis = {
+					autoSearchPaths = true,
+					diagnosticMode = "openFilesOnly",
+					useLibraryCodeForTypes = true,
+					typeCheckingMode = "basic",
+				},
 				autoImportCompletions = true,
 				disableOrganizeImports = true,
 			},
 		},
 	})
+
 	sennvim.lsp.add_config("ruff", {
 		init_options = {
 			settings = {
@@ -16,11 +22,4 @@ return function()
 			},
 		},
 	})
-	-- sennvim.linters.add_linter("python", { "ruff" })
-	-- sennvim.formatters.add_formatter("python", { "ruff" })
-	-- sennvim.formatters.add_formatter_config("ruff", {
-	-- 	command = "ruff",
-	-- 	args = { "--fix", "--stdin-filename", "%:p", "-" },
-	-- 	stdin = true,
-	-- })
 end
