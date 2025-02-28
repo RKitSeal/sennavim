@@ -37,7 +37,7 @@ Now clone this repository into your nvim directory:
 git clone https://github.com/ionztorm/sennvim.git ~/.config/nvim
 ```
 
-Next, remove the git dir:
+Next, remove the git dir. You can keep plugins updated via the `:Lazy` command within neovim.
 
 ```bash
 rm -rf ~/.config/nvim/.git .gitignore
