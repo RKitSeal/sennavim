@@ -33,31 +33,38 @@ opt.showcmd = true -- Show command in the bottom bar
 opt.number = true -- Enable line numbers
 opt.relativenumber = true -- Relative line numbers
 opt.cursorline = true -- Highlight the current line
--- opt.cursorcolumn = true -- Highlight the current column
-opt.colorcolumn = "100"
+-- opt.cursorcolumn = true          -- Highlight the current column
+
+opt.wrap = true
+opt.linebreak = true
+opt.breakindent = true
+opt.showbreak = "↪ "
+
+opt.colorcolumn = "80" -- Highlight column 80
+-- opt.textwidth = 80               -- Wrap text at 80 characters
 -- cmd([[highlight ColorColumn ctermbg=lightgrey guibg=#47215F]])
+opt.shortmess:append("W")
 opt.fillchars = { eob = " " } -- Hide tildes on empty lines
 opt.splitright = true -- Vertical splits open to the right
 opt.splitbelow = true -- Horizontal splits open below
 opt.splitkeep = "cursor" -- Keep cursor centered during splits
 opt.hlsearch = true -- Highlight search matches
 opt.signcolumn = "yes" -- Show sign column
-opt.cmdheight = 1 -- hides the command line when not in use
-opt.shortmess:append("W")
+opt.cmdheight = 0 -- hides the command line when not in use
 
 -- ===========================================
 -- Indentation Settings
 -- ===========================================
 opt.expandtab = true -- Convert tabs to spaces
--- opt.smarttab = true -- Smart tab behavior
+opt.smarttab = true -- Smart tab behavior
 opt.shiftwidth = 4 -- Indent by 4 spaces
 opt.tabstop = 4 -- Tab width is 4 spaces
 opt.autoindent = true -- Auto-indent new lines
 opt.smartindent = true -- Smart indent based on code structure
 opt.breakindent = true -- Preserve indent in wrapped lines
--- opt.list = true -- Show whitespace characters
+-- opt.list = true                  -- Show whitespace characters
 -- opt.listchars:append("tab:· ")
--- opt.listchars:append("space:·") -- Use a centered dot for spaces
+-- opt.listchars:append("space:·")  -- Use a centered dot for spaces
 
 -- ===========================================
 -- Scrolling and Cursor Settings
@@ -79,7 +86,7 @@ opt.updatetime = 300 -- Faster completion time (default 4000ms)
 -- ===========================================
 -- Syntax and Highlighting
 -- ===========================================
-cmd.syntax = "enable" -- Enable syntax highlighting
+cmd("syntax enable") -- Enable syntax highlighting
 
 -- ===========================================
 -- Matching Settings
