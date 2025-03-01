@@ -29,6 +29,11 @@ map("n", "<S-Down>", ":m .+1<CR>==", { desc = "Move line down" })
 map("x", "<S-Up>", ":move '<-2<CR>gv-gv", { desc = "Move selected lines up" })
 map("x", "<S-Down>", ":move '>+1<CR>gv-gv", { desc = "Move selected lines down" })
 
+-- Indentation
+
+map("v", ">", ">gv", { desc = "Indent block to the right and keep selected" })
+map("v", "<", "<gv", { desc = "Indent block to the left and keep selected" })
+
 -- buffers
 map("n", "<leader>bn", ":bnext<CR>", { desc = "Switch to the next buffer" })
 map("n", "<leader>bp", ":bprevious<CR>", { desc = "Switch to the previous buffer" })
