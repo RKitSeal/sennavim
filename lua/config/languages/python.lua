@@ -9,7 +9,7 @@ return function()
 					typeCheckingMode = "basic",
 				},
 				autoImportCompletions = true,
-				disableOrganizeImports = true,
+				disableOrganizeImports = false,
 			},
 		},
 	})
