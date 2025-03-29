@@ -6,7 +6,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"Saghen/blink.cmp",
+			-- "Saghen/blink.cmp",
 		},
 		config = function()
 			sennvim.lsp.load_language_configs()
@@ -14,7 +14,7 @@ return {
 			local mason = require("mason")
 			local lspconfig = require("lspconfig")
 			local masonlspcfg = require("mason-lspconfig")
-			local blink_cmp = require("blink.cmp")
+			-- local blink_cmp = require("blink.cmp")
 			local lsps = sennvim.lsp.get_server_names()
 			local formatters = sennvim.formatters.get_formatter_names()
 			local linters = sennvim.linters.get_linter_names()
@@ -23,7 +23,7 @@ return {
 
 			-- local capabilities = blink_cmp.get_lsp_capabilities()
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, blink_cmp.get_lsp_capabilities())
+			-- capabilities = vim.tbl_deep_extend("force", capabilities, blink_cmp.get_lsp_capabilities())
 
 			local keymaps = require("config.settings.keymaps").lsp
 			local on_attach = function(_, bufnr)
